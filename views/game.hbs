@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{game.Name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="game.css" media="screen">
+</head>
+
+<body>
+    <div class="card" style="width: 23rem;">
+        <img class="card-img-top" src="{{game.Image}}" alt=" Card image cap" height="286" width="180">
+        <div class="card-body">
+            <h5 class="card-title">{{game.Name}}</h5>
+            <p class=" card-text">{{game.Genre}}</p><br>
+            <a href="{{game.URL}}" target="_blank" class="btn">Go
+                to
+                Steam / Owner's Page</a><br><br>
+            {{#if flag }}
+            <form action="/game" method="POST">
+                <button type="submit" class="btn btn-info"><i class="fas fa-thumbs-up">&nbsp;
+                        Interested</i></button>&emsp;
+                <span> {{game.Likes}} people like this!!</span>
+            </form>
+            {{else}}
+            <form action="/game" method="POST">
+                <button type="submit" class="btn btn-info"><i class="fas fa-thumbs-down">&nbsp; Not
+                        Interested</i></button>&emsp;
+                <span> {{game.Likes}} people like this!!</span>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+</body>
+
+</html>

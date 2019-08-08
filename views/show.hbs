@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="show.css">
+
+</head>
+
+<body>
+    <ul id="list">
+        {{#each ga as |g|}}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{g.Image}}" alt=" Card image cap" height="286" width="180">
+            <div class="card-body">
+                <h5 class="card-title">{{g.Name}}</h5>
+                <p class="card-text">{{g.Genre}}</p><br>
+                <a href="{{g.URL}}" target="_blank" class="btn">Go
+                    to
+                    Steam / Owner's Page</a>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+</body>
+
+</html>

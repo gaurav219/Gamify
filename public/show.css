@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+}
+
+
+.card {
+    margin: 30px;
+    top: 20px;
+    display: inline-block;
+    border: 5px solid red;
+
+}
+
+.card-title {
+    font-style: italic;
+}
+
+.card-body {
+    background-color: cornsilk;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h5 {
+    text-shadow: 1px 1px black;
+
+}
+
+p {
+    font-style: italic;
+}
+
+.btn {
+    background-color: #1038E3;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    background-color: black;
+    color: wheat;
+}

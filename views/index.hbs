@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Literata|Lobster&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--  <div class="nav"> -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        {{!-- <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link navbar-nav mr-auto" href="#">Left</a>
+                </li>
+            </ul>
+        </div> --}}
+        {{!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Left</a>
+            </li>
+        </ul> --}}
+        <div class="ml-auto order-0">&emsp;&emsp;
+            <a class="navbar-brand mx-auto" href="/">Home</a>&emsp;&emsp;
+            <a class="navbar-brand mx-auto" href="/about">About</a>&emsp;&emsp;
+            <a class="navbar-brand mx-auto" href="/support">Support</a>
+        </div>
+        {{!-- <div class="ml-auto order-0">
+            <a class="navbar-brand mx-auto" href="/">Home</a>&emsp;
+            <a class="navbar-brand mx-auto" href="about">About</a>&emsp;
+            <a class="navbar-brand mx-auto" href="/support">Support</a>
+        </div> --}}
+        {{#if login}}
+        <ul class="navbar-nav ml-auto order-0">
+            <li class="nav-item">
+                <a href="#" class="nav-brand mx-auto" id="username">Hello, {{user}}</a>&emsp;
+                <a href="/logout" class="nav-brand mx-auto">Logout</a>
+            </li>
+        </ul>
+        {{else}}
+        <ul class="navbar-nav ml-auto order-0">
+            <li class="nav-item">
+                <a class="nav-brand mx-auto" href="/login">Login</a>
+            </li>&emsp;|&emsp;
+            <li class="nav-item">
+                <a class="nav-brand mx-auto" href="/signup">SignUp</a>
+            </li>
+        </ul>
+        {{/if}}
+    </nav>
+
+    <img src="Background.jpg" alt="GTA 5" height="1080" width="1920"><br><br><br>
+    <h1 class="text-center"><em><strong>Your Number One Place for Games and Info</strong></em></h1>
+    <div class="" id="trending">
+        <h1 class="trend">Trending This Week</h1>
+        <div id="inside">
+            <br><br>
+            {{#each all as |a|}}
+            <h3>{{a.Name}}</h3>
+            {{/each}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class='col-md-5 offset-md-2 col-sm-12'>
+                {{#if messages.info}}
+                <div class="info alert alert-danger" role="alert">
+                    {{messages.info}}
+                </div>
+                <br>
+                {{/if}}
+                <br><br><br><br><br><br><br><br><br>
+                <form action="/game/LIMBO" method="GET">
+                    <input type="text" class="form-control" name="game" id="inp" placeholder="Enter title here....">
+                    <br><br>
+                    <button type="submit" id='but' class="btn btn-dark">Search</button><br><br>
+                </form>
+                {{#if messages.error}}
+                <div class="error btn-danger">
+                    {{messages.error}}
+                </div>
+                <br>
+                {{/if}}
+                <form action="/show" action="POST">
+                    <button type="submit" class="btn btn-dark">Show All</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <h1 class="text-center">Games</h1><br><br><br><br>
+                <h3 class="text-center">Search Games here</h3><br><br>
+                <input type="text" class="form-control" placeholder="Enter title here!!!">
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>

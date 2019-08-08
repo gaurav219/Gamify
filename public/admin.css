@@ -1,0 +1,13 @@
+h2 {
+    text-decoration: underline;
+}
+
+.successMessage,
+.error {
+    font-size: 20px;
+    text-align: center;
+}
+
+body {
+    background-color: beige;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="aboutlogin.css">
+</head>
+
+<body>
+    <img src="Battlefield.jpg" alt="GTA 5">
+    <div class="container">
+        <div class="row">
+            <div class='col-md-6 offset-md-3 col-sm-12'>
+                <h1 class="text-center">Login</h1><br><br><br><br>
+                {{#if messages.error}}
+                <div class="error btn-danger">
+                    {{messages.error}}
+                </div>
+                <br><br>
+                {{/if}}
+                <form action="/login" method="POST">
+                    <input name="username" placeholder="Username" class="form-control"><br><br>
+                    <input name="password" type="password" placeholder="Password" class="form-control"><br><br>
+                    <button type="submit" class="btn btn-dark">Login</button><br><br>
+
+                    <h4 id='signup'>Or Sign Up &emsp;<a href="/signup" class="btn" id='sign'>Sign Up</a></h4><br>
+                    <!-- {{!--  <a href="/login/github">Logbin with Github</a><br><br> --}}
+                    <h5 id='jkl'>Other Options</h5><br>
+                    <a href="/login/github"><i class="fa fa-github" style="font-size:60px;color:black;"></i></a>&emsp;
+                    <a href="/login/reddit"><i class="fa fa-reddit" style="font-size: 60px;color:red"></i></a> -->
+                    <h4 id='jkl'>Other Options</h4><br>
+                    <a href="/login/github"><i class="fa fa-github" style="font-size:60px;color:black;"></i></a>&emsp;
+                    {{!--                     <a href="/login/fb"><i class="fa fa-facebook" style="font-size: 60px;"></i></a>
+ --}}
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

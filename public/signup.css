@@ -1,0 +1,31 @@
+img {
+    width: 100%;
+    position: absolute;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+h1 {
+    font-family: 'PT Serif', serif;
+    text-decoration: underline;
+    color: wheat;
+    font-style: italic;
+}
+
+p {
+    transform: translate(500px);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+
+}
+
+.error {
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+}
+
+body {
+    background-color: blanchedalmond;
+}

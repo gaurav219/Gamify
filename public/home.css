@@ -1,0 +1,120 @@
+/* img {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+img {
+    width: 100%;
+    position: absolute;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+input {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    font-family: 'Literata', serif;
+    text-decoration: underline;
+
+
+    color: darkmagenta;
+}
+
+
+
+.row {
+
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    padding: 40px;
+    text-align: center;
+}
+
+
+
+
+
+
+.container {
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-item {
+    float: right;
+
+}
+
+.nav-item:hover {
+    color: blue;
+    opacity: 100%;
+}
+
+.navbar-nav {
+    color: white;
+}
+
+.row a {
+    font-size: 15px;
+    padding: 10px;
+    border: 1px dotted black;
+    border-radius: 10px;
+    color: brown;
+
+}
+
+.error {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.info {
+    font-size: 20px;
+    text-align: center;
+}
+
+#username {
+    color: antiquewhite;
+}
+
+#inside {
+    height: 500px;
+    width: 500px;
+    margin: 30px;
+    border: 5px solid black;
+    position: relative;
+}
+
+#trending{
+    overflow: hidden;
+    float: left;
+}
+
+.trend {
+    font-style: italic;
+    font-size:40px;
+}
+
+#inside h3 {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 1px 1px grey;
+}
