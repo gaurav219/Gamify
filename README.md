@@ -1,6 +1,6 @@
 # Gamify
 
-Gamify is a games library of different genres and also shows the hot picks of the current week. If interested, you can also buy the games by clicking `Go To Steam / Owner's Page`.
+Gamify is a games library of different genres and also shows the hot picks of the current week. If interested, you can also buy the games by clicking `Go To Steam/Owner's Page`.
 
 ## Version
 `
