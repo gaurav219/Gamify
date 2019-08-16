@@ -1,7 +1,7 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const GithubStrategy = require('passport-github').Strategy
-const RedditStrategy = require('passport-reddit').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy
 
 const {
     Users
@@ -10,10 +10,10 @@ const {
 passport.use('local',
     new LocalStrategy((username, password, done) => {
         Users.findOne({
-                where: {
-                    username,
-                },
-            })
+            where: {
+                username,
+            },
+        })
             .then((user) => {
                 if (!user) {
                     return done(null, false, {
@@ -32,48 +32,26 @@ passport.use('local',
     }),
 )
 
-/* passport.use('admin', new LocalStrategy((username, password, done) => {
-    Users.findOne({
-            where: {
-                username: 'test',
-            }
-        }).then((user) => {
-            if (!user) {
-                return done(null, false, {
-                    message: 'Username is not valid'
-                })
-            }
-
-            if (user.password != password) {
-                return done(null, false, {
-                    message: 'Password is INCORRECT!!!'
-                })
-            }
-            done(null, user)
-        })
-        .catch(done)
-
-}))
- */
 passport.use(new GithubStrategy({
-        clientID: 'Iv1.a7dc6f7f95100c4d',
-        clientSecret: '1a1dec9a0d5c63327eb6ebfc0be24372ae2932a2',
-        callbackURL: 'http://localhost:7890/login/github/callback',
-    },
+    clientID: 'Iv1.a7dc6f7f95100c4d',
+    clientSecret: '1a1dec9a0d5c63327eb6ebfc0be24372ae2932a2',
+    callbackURL: 'http://localhost:7890/login/github/callback',
+},
     (accessToken, refreshToken, profile, done) => {
         console.log(profile)
         Users.findCreateFind({
-                where: {
-                    username: profile.id
-                },
-                defaults: {
-                    username: profile.id,
-                    ghAccessToken: accessToken,
-                },
-            }).then((user) => {
-                console.log('inside')
-                done(null, user)
-            })
+            where: {
+                username: profile.id
+            },
+            defaults: {
+                username: profile.id,
+                ghAccessToken: accessToken,
+            },
+        }).then((user) => {
+            //console.log('after this')
+            //console.log(profile.displayName)
+            done(null, profile)
+        })
             .catch(done)
         /* console.log(profile)
         Users.create({
@@ -82,8 +60,30 @@ passport.use(new GithubStrategy({
             }) */
 
     },
-), )
+))
 
+passport.use(new FacebookStrategy({
+    clientID: '894130110965374',
+    clientSecret: '2a826c57a5b48b104af9eeb00a60667f',
+    callbackURL: "http://localhost:7890/login/facebook/callback"
+},
+    (accessToken, refreshToken, profile, done) => {
+        console.log(profile)
+        Users.findCreateFind({
+            where: {
+                username: profile.id
+            },
+            defaults: {
+                username: profile.id,
+                fbAcessToken: accessToken,
+            }
+        }).then((user) => {
+            console.log('successful authentication via fb')
+            done(null, profile)
+        })
+            .catch(done)
+    }
+));
 
 
 

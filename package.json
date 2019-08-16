@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "gamify",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,9 +18,9 @@
     "express-session": "^1.16.2",
     "hbs": "^4.0.4",
     "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
-    "passport-reddit": "^0.2.4",
     "sequelize": "^5.10.2",
     "sqlite3": "^4.0.9"
   }

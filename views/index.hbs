@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="home.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Literata|Lobster&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="Background1.png" />
+
 
 </head>
 
@@ -64,11 +66,11 @@
     <img src="Background.jpg" alt="GTA 5" height="1080" width="1920"><br><br><br>
     <h1 class="text-center"><em><strong>Your Number One Place for Games and Info</strong></em></h1>
     <div class="" id="trending">
-        <h1 class="trend">Trending This Week</h1>
+        <h1 class="trend">Trending This Week</h1><br>
         <div id="inside">
             <br><br>
             {{#each all as |a|}}
-            <h3>{{a.Name}}</h3>
+            <h3><a href="/game/{{a.Name}}" target="_blank">{{a.Name}}</a></h3>
             {{/each}}
         </div>
     </div>
@@ -81,8 +83,8 @@
                 </div>
                 <br>
                 {{/if}}
-                <br><br><br><br><br><br><br><br><br>
-                <form action="/game/LIMBO" method="GET">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <form action="/game" method="GET">
                     <input type="text" class="form-control" name="game" id="inp" placeholder="Enter title here....">
                     <br><br>
                     <button type="submit" id='but' class="btn btn-dark">Search</button><br><br>

@@ -2,12 +2,10 @@
     margin: 0 auto;
     top: 100px;
     border: 5px outset red;
-
-
 }
 
 .card-body {
-    background-color: white;
+    background-color: antiquewhite;
 }
 
 
@@ -18,7 +16,7 @@
 }
 
 body {
-    background-color: #17286E;
+    background-color: darkmagenta;
 }
 
 a.btn{
@@ -29,4 +27,8 @@ a.btn{
 .btn:hover {
     background-color: black;
     color: wheat;
+}
+
+.like {
+    font-weight: bold;
 }

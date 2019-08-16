@@ -16,7 +16,8 @@
     <ul id="list">
         {{#each ga as |g|}}
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{g.Image}}" alt=" Card image cap" height="286" width="180">
+            <a href="/game/{{g.Name}}"><img class="card-img-top" src="{{g.Image}}" alt=" Card image cap" height="286"
+                    width="180"> </a>
             <div class="card-body">
                 <h5 class="card-title">{{g.Name}}</h5>
                 <p class="card-text">{{g.Genre}}</p><br>
