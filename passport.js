@@ -2,6 +2,7 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const GithubStrategy = require('passport-github').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 
 const {
     Users
@@ -86,6 +87,28 @@ passport.use(new FacebookStrategy({
 ));
 
 
+passport.use(new GoogleStrategy({
+    clientID: '960091983754-jdg7m286hslrek15bqio3cd0dg6osf47.apps.googleusercontent.com',
+    clientSecret: 'lcahPdCCbzTOJuRlFSCGGIFn',
+    callbackURL: "http://localhost:7890/login/google/callback"
+},
+    (accessToken, refreshToken, profile, done) => {
+        console.log(profile)
+        Users.findCreateFind({
+            where: {
+                username: profile.id
+            },
+            defaults: {
+                username: profile.id,
+                gleAcessToken: accessToken,
+            }
+        }).then((user) => {
+            console.log('successful authentication via google')
+            done(null, profile)
+        })
+            .catch(done)
+    }
+));
 
 
 

@@ -172,6 +172,19 @@ app.get('/login/facebook/callback', passport.authenticate('facebook', {
     failureFlash: true
 }))
 
+app.get('/login/google', passport.authenticate('google', { scope: ['profile'] }));
+
+
+app.get('/login/google/callback', passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+
+
+
+
+
 app.get('/support', (req, res) => res.render('support'))
 
 app.get('/admin/del', Auth.ensureLoggedIn('/login'), isAdmin, (req, res) => {
