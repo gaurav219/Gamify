@@ -5,6 +5,8 @@ const flash = require('express-flash')
 const cookieParser = require('cookie-parser');
 const Auth = require('connect-ensure-login')
 const path = require('path')
+const SQLiteStore = require('connect-sqlite3')(session);
+
 
 let {
     db,
@@ -30,6 +32,7 @@ app.use(express.urlencoded({
 app.use(cookieParser('secret'));
 
 app.use(session({
+    store: new SQLiteStore,
     secret: 'averylongstring',
     resave: false,
     saveUninitialized: true,

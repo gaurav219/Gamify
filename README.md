@@ -26,6 +26,24 @@ Show All
 
 ![image](https://user-images.githubusercontent.com/44445154/63543607-d5f9af80-c540-11e9-97a6-ac37a404f224.png)
 
+## Routes
+
+```bash
+"/" - Home Page of the Application. 
+"/signup" - SignUp Page - The user can sign up to the server here.
+"/login" - Login Page - The user can log in to the server here.
+"/game/{Name_Of_Game}" - Accessing the page of a particular game.
+"/admin" - Adding, removing the games are handled here. Only the admin can access this page.
+"/about" - A small introduction of the application.
+"/support" - Suggestions for improving and contributing to the application.
+"/show" - Surfing the whole game directory by yourself.
+```
+
+## Third - Party Authentications
+
+```GitHub```
+```Facebook```
+```Google```
 
 ## Prerequisites
 
