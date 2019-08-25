@@ -66,7 +66,7 @@ passport.use(new GithubStrategy({
 passport.use(new FacebookStrategy({
     clientID: '894130110965374',
     clientSecret: '2a826c57a5b48b104af9eeb00a60667f',
-    callbackURL: "http://localhost:7890/login/facebook/callback"
+    callbackURL: "https://gamify-v100.herokuapp.com/login/facebook/callback"
 },
     (accessToken, refreshToken, profile, done) => {
         console.log(profile)
@@ -90,7 +90,7 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
     clientID: '960091983754-jdg7m286hslrek15bqio3cd0dg6osf47.apps.googleusercontent.com',
     clientSecret: 'lcahPdCCbzTOJuRlFSCGGIFn',
-    callbackURL: "http://localhost:7890/login/google/callback"
+    callbackURL: "https://gamify-v100.herokuapp.com/login/google/callback"
 },
     (accessToken, refreshToken, profile, done) => {
         console.log(profile)
