@@ -36,7 +36,7 @@ passport.use('local',
 passport.use(new GithubStrategy({
     clientID: 'Iv1.a7dc6f7f95100c4d',
     clientSecret: '1a1dec9a0d5c63327eb6ebfc0be24372ae2932a2',
-    callbackURL: 'http://localhost:7890/login/github/callback',
+    callbackURL: 'https://gamify-v100.herokuapp.com/login/github/callback',
 },
     (accessToken, refreshToken, profile, done) => {
         console.log(profile)

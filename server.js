@@ -334,6 +334,6 @@ app.use('/admin', express.static(__dirname + '/public'))
 
 db.sync().then(() => {
     app.listen(port, () => {
-        console.log('listening to http://localhost:7890')
+        console.log('listening to port')
     })
 })
