@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const Auth = require('connect-ensure-login')
 const path = require('path')
 const SQLiteStore = require('connect-sqlite3')(session);
+const port = process.env.PORT || 7890;
+
 
 
 let {
@@ -331,7 +333,7 @@ app.use(express.static(path.join(__dirname, '/public/images')))
 app.use('/admin', express.static(__dirname + '/public'))
 
 db.sync().then(() => {
-    app.listen(7890, (req, res) => {
+    app.listen(port, () => {
         console.log('listening to http://localhost:7890')
     })
 })
