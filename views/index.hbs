@@ -38,6 +38,10 @@
             <a class="navbar-brand mx-auto" href="/">Home</a>&emsp;&emsp;
             <a class="navbar-brand mx-auto" href="/about">About</a>&emsp;&emsp;
             <a class="navbar-brand mx-auto" href="/support">Support</a>
+            {{#if login}}
+            &emsp;&emsp;<a class="navbar-brand mx-auto" href="/mygames">My Games</a>
+            {{/if}}
+
         </div>
         {{!-- <div class="ml-auto order-0">
             <a class="navbar-brand mx-auto" href="/">Home</a>&emsp;
@@ -69,8 +73,8 @@
         <h1 class="trend">Trending This Week</h1><br>
         <div id="inside">
             <br><br>
-            {{#each all as |a|}}
-            <h3><a href="/game/{{a.Name}}" target="_blank">{{a.Name}}</a></h3>
+            {{#each game1 as |a|}}
+            <h3><a href="/game/{{a}}" target="_blank">{{a}}</a></h3>
             {{/each}}
         </div>
     </div>

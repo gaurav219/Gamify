@@ -8,17 +8,17 @@
     <title>Show</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="show.css">
 </head>
 
 <body>
     <ul id="list">
         {{#each ga as |g|}}
         <div class="card" style="width: 18rem;">
-            <a href="/game/{{g.Name}}"><img class="card-img-top" src="{{g.Image}}" alt=" Card image cap" height="286"
+            <a href="/game/{{g.Title}}"><img class="card-img-top" src="{{g.Image}}" alt=" Card image cap" height="286"
                     width="180"> </a>
             <div class="card-body">
-                <h5 class="card-title">{{g.Name}}</h5>
+                <h5 class="card-title">{{g.Title}}</h5>
                 <p class="card-text">{{g.Genre}}</p><br>
                 <a href="{{g.URL}}" target="_blank" class="btn">Go
                     to

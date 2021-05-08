@@ -2,3 +2,9 @@
 node_modules
 
 Policy URL
+
+deps.json
+
+users.db
+
+sessions

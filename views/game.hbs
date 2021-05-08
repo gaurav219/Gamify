@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{game.Name}}</title>
+    <title>{{temp.Title}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -15,24 +15,24 @@
 
 <body>
     <div class="card" style="width: 23rem;">
-        <img class="card-img-top" src="/{{game.Image}}" alt=" Card image cap" height="286" width="180">
+        <img class="card-img-top" src="/{{temp.Image}}" alt=" Card image cap" height="286" width="180">
         <div class="card-body">
-            <h5 class="card-title">{{game.Name}}</h5>
-            <p class=" card-text">{{game.Genre}}</p><br>
-            <a href="{{game.URL}}" target="_blank" class="btn">Go
+            <h5 class="card-title">{{temp.Title}}</h5>
+            <p class=" card-text">{{temp.Genre}}</p><br>
+            <a href="{{temp.URL}}" target="_blank" class="btn">Go
                 to
                 Steam / Owner's Page</a><br><br>
             {{#if flag }}
-            <form action="/game/{{game.Name}}" method="POST">
+            <form action="/game/{{temp.Title}}/{{flag}}" method="GET">
                 <button type="submit" class="btn btn-info"><i class="fas fa-thumbs-up">&nbsp;
                         Interested</i></button>&emsp;
-                <span class="like"> {{game.Likes}} people like this!!</span>
+                <span class="like"> {{temp.Likes}} people like this!!</span>
             </form>
             {{else}}
-            <form action="/game/{{game.Name}}" method="POST">
+            <form action="/game/{{temp.Title}}/{{flag}}" method="GET">
                 <button type="submit" class="btn btn-info"><i class="fas fa-thumbs-down">&nbsp; Not
                         Interested</i></button>&emsp;
-                <span class="like"> {{game.Likes}} people like this!!</span>
+                <span class="like"> {{temp.Likes}} people like this!!</span>
             </form>
             {{/if}}
         </div>
