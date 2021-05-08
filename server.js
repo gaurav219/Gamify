@@ -12,7 +12,7 @@ const Knex = require("knex");
 
 const knexfile = require("./knexfile");
 
-const knex = Knex(knexfile.development);
+const knex = Knex(knexfile.production);
 
 const { Model } = require("objection");
 
