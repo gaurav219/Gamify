@@ -29,6 +29,7 @@ module.exports = {
     client: "postgresql",
     host: "heroku",
     connection: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
     pool: {
       min: 2,
       max: 10,
