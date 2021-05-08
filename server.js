@@ -6,7 +6,7 @@ const passport = require("./passport");
 // const Auth = require("connect-ensure-login");
 const path = require("path");
 // const SQLiteStore = require("connect-sqlite3")(session);
-const port = 7890;
+const port = process.env.PORT || 7890;
 
 const Knex = require("knex");
 
