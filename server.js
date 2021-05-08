@@ -21,6 +21,7 @@ Model.knex(knex);
 // const { User } = require("./models/User");
 const { AllGames } = require("./models/AllGames");
 
+require("dotenv").config();
 // let { db, Users, Games, Sequelize } = require("./db");
 
 // let userone = {};

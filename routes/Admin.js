@@ -4,8 +4,10 @@ const Auth = require("connect-ensure-login");
 
 const { AllGames } = require("../models/AllGames");
 
+require("dotenv").config();
+
 const isAdmin = (req, res, next) => {
-  if (req.user.username == "test2021") {
+  if (req.user.username == process.env.ADMIN) {
     return next();
   } else {
     req.flash("info", "Access Denied!!!");

@@ -5,6 +5,7 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 //const OutlookStrategy = require("passport-outlook").Strategy;
 const flash = require("express-flash");
+require("dotenv").config();
 
 const router = require("express").Router();
 
@@ -38,8 +39,10 @@ passport.use(
 passport.use(
   new GithubStrategy(
     {
-      clientID: "Iv1.a7dc6f7f95100c4d",
-      clientSecret: "1a1dec9a0d5c63327eb6ebfc0be24372ae2932a2",
+      // clientID: "Iv1.a7dc6f7f95100c4d",
+      clientID: process.env.GITHUB_ID,
+      // clientSecret: "1a1dec9a0d5c63327eb6ebfc0be24372ae2932a2",
+      clientSecret: process.env.GITHUB_SECRET,
       callbackURL: "https://gamify-v100.herokuapp.com/login/github/callback",
     },
     (accessToken, refreshToken, profile, done) => {
@@ -71,8 +74,10 @@ passport.use(
 passport.use(
   new FacebookStrategy(
     {
-      clientID: "894130110965374",
-      clientSecret: "2a826c57a5b48b104af9eeb00a60667f",
+      //clientID: "894130110965374",
+      clientID: process.env.FB_ID,
+      //clientSecret: "2a826c57a5b48b104af9eeb00a60667f",
+      clientSecret: process.env.FB_SECRET,
       //callbackURL: "http://localhost:7890/login/facebook/callback"
       callbackURL: "https://gamify-v100.herokuapp.com/login/facebook/callback",
     },
@@ -99,9 +104,11 @@ passport.use(
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "960091983754-jdg7m286hslrek15bqio3cd0dg6osf47.apps.googleusercontent.com",
-      clientSecret: "lcahPdCCbzTOJuRlFSCGGIFn",
+      //clientID:
+      //    "960091983754-jdg7m286hslrek15bqio3cd0dg6osf47.apps.googleusercontent.com",
+      clientID: process.env.Google_ID,
+      clientSecret: process.env.Google_SECRET,
+      //clientSecret: "lcahPdCCbzTOJuRlFSCGGIFn",
       callbackURL: "https://gamify-v100.herokuapp.com/login/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
