@@ -5,6 +5,7 @@ const passport = require("./passport");
 // const cookieParser = require("cookie-parser");
 // const Auth = require("connect-ensure-login");
 const path = require("path");
+require("dotenv").config();
 // const SQLiteStore = require("connect-sqlite3")(session);
 const port = process.env.PORT || 7890;
 

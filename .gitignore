@@ -1,13 +1,7 @@
 # Ignore Node Modules
 node_modules
-
 .env
-
 Policy URL
-
 deps.json
-
 users.db
-
 sessions
-
